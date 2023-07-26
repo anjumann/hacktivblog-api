@@ -6,12 +6,12 @@ export const POST = async (request: Request) => {
 
   try {
     const newPost = await createEvent(data);
-    console.log(newPost);
+    // console.log(newPost)
     return NextResponse.json(newPost, {
       status: 201,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error)
     return NextResponse.json(error);
   }
 };
@@ -26,7 +26,7 @@ export const GET = async (request: Request) => {
         const data = await getAllEvents();
         return NextResponse.json(data);
         } catch (error) {
-        console.log(error);
+        // console.log(error)
         return NextResponse.json(error);
         }
     }
@@ -36,7 +36,7 @@ export const GET = async (request: Request) => {
         const data = await getEventsByEmail(email);
         return NextResponse.json(data);
         } catch (error) {
-        console.log(error);
+        // console.log(error);
         return NextResponse.json(error);
         }
     }
@@ -45,7 +45,7 @@ export const GET = async (request: Request) => {
         const data = await getEventById(eventId);
         return NextResponse.json(data);
         } catch (error) {
-        console.log(error);
+        // console.log(error);
         return NextResponse.json(error);
         }
     }

@@ -12,12 +12,12 @@ export const POST = async (request: Request) => {
 
   try {
     const newPodcast = await createPodcast(data);
-    console.log(newPodcast);
+    // console.log(newPodcast);
     return NextResponse.json(newPodcast, {
       status: 201,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return NextResponse.json(error);
   }
 };
@@ -33,7 +33,7 @@ export const GET = async (request: Request) => {
             const data = await getAllPodcasts();
             return NextResponse.json(data);
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             return NextResponse.json(error);
         }
     }
@@ -43,7 +43,7 @@ export const GET = async (request: Request) => {
             const data = await getPodcastById(podcastId);
             return NextResponse.json(data);
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             return NextResponse.json(error);
         }
     }
@@ -53,7 +53,7 @@ export const GET = async (request: Request) => {
             const data = await getPodcastsByEmail(email);
             return NextResponse.json(data);
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             return NextResponse.json(error);
         }
     }

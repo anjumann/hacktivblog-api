@@ -4,14 +4,13 @@ export interface Podcast {
   title: string;
   description: string;
   date: string;
-  time: string;
   location: string;
   authorEmail: string;
   youtubeLink: string;
 }
 
 export const createPodcast = async (podcast: Podcast) => {
-  const { title, description, date, time, location, authorEmail, youtubeLink } =
+  const { title, description, date, location, authorEmail, youtubeLink } =
     podcast;
 
   const newPodcast = await prisma.podcast.create({
@@ -19,7 +18,6 @@ export const createPodcast = async (podcast: Podcast) => {
       title,
       date,
       description,
-      time,
       location,
       youtubeLink,
       author: {
