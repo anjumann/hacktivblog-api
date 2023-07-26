@@ -38,6 +38,7 @@ model Events {
   date        String?
   time        String?
   location    String?
+  eventId     String   @unique @default(uuid())
   author      User?    @relation(fields: [authorId], references: [id])
   authorId    String?  @db.ObjectId
 }
@@ -47,8 +48,12 @@ model Podcast {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   title       String
-  content     String?
-  youtubeLink String
+  description String?
+  date        String?
+  time        String?
+  location    String?
+  youtubeLink String?
+  podcastId   String   @unique @default(uuid())
   author      User?    @relation(fields: [authorId], references: [id])
   authorId    String?  @db.ObjectId
 }

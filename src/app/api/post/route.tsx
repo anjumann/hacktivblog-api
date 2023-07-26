@@ -26,8 +26,8 @@ export const POST = async (request: Request) => {
 
 export const GET = async (request: Request) => {
   const { searchParams } = new URL(request.url);
-  const postId = searchParams.get("postId");
-  const email = searchParams.get("email");
+  const postId = searchParams.get("postId") as string;
+  const email = searchParams.get("email") as string;
 
   if (!postId && !email) {
     try {

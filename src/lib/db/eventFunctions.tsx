@@ -49,10 +49,10 @@ export const getEventsByEmail = async (email: string) => {
     return events
 }
 
-export const getEventById = async (id: string) => {
+export const getEventById = async (eventId: string) => {
     const event = await prisma.events.findUnique({
         where: {
-            id: id
+            eventId : eventId
         }
     })
     return event
